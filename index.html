@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Carousel UI demo page</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="./style.css" rel="stylesheet" type="text/css">
+		<link href="./carousel.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/carousel.js"></script>
+		<!--eventuale css aggiuntivo-->
+	</head>
+	<body>
+		<h1>Carousel Demo Page</h1>
+		<div id="myCarousel1"></div>
+		<div id="myCarousel2"></div>
+		<script type="text/javascript">
+			const options1 = {
+				container: 'myCarousel',
+				icon: 'collections',
+				title: 'Fresh and just uploaded content >',
+				subtitle: 'Si, ma la sbiriguda della sbrindellona come se fosse antani come faceva? Prego? ',
+				fetchCards: function (chunkSize) {
+					/* 
+						funzione che ritorna "chunkSize" card objects da mostrare nel carousel
+						ogni card object è strutturato così
+					*/
+					return {
+						image: 'https://...', // url od un immagine presa a caso dal web
+						type: 'video', // stringa che contiene (video, playlist, news, other).
+						duration: 3600, // durata da convertire in un numero leggibile per l'umano
+						title: 'un titolo',
+						cardinality: 'single' //se singola carta o un gruppo
+					}
+				}
+			};
+			const carousel1 = new carousel(options1);
+		</script>
+		<script type="text/javascript">
+			const options2 = {
+				container: 'muCarousel2',
+				icon: 'event_seat',
+				title: 'another carousel instance title',
+				subtitle: 'Guardi, le ho ritagliato quell\'articolo sul Casentino. Ma lei se la blinda la supercazzola prematurata',
+				fetchCards:function (chunkSize) {
+
+				}
+			};
+			const carousel2 = new Carousel(options2)
+		</script>
+		<nav>
+			<ul>
+				<li>hello world!</li>
+			</ul>
+		</nav>
+	</body>
+</html>
